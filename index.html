@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joshua Williams, Alternative Energy &amp; Power Generation Engineer</title>
+<meta name="description" content="Portfolio of Joshua Williams, Alternative Energy & Power Generation Engineering student at Penn State University: single-axis solar tracking, the Recon-1 autonomous rover, and manufacturing engineering work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================= NAVIGATION ============================= -->
+<header class="nav" id="siteNav">
+  <div class="nav-inner container">
+    <a href="#home" class="nav-logo">Engineering Portfolio</a>
+
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" data-nav="home">Home</a></li>
+        <li><a href="#about" data-nav="about">About</a></li>
+        <li><a href="#internship" data-nav="internship">Internship</a></li>
+        <li><a href="#projects" data-nav="projects">Projects</a></li>
+        <li><a href="#classwork" data-nav="classwork">Class Work</a></li>
+        <li><a href="#contact" data-nav="contact">Contact</a></li>
+        <li><a href="assets/Joshua_Williams_Resume.pdf" class="nav-resume" target="_blank" rel="noopener" download>Resume</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HOME VIEW — hero, about, internship, project lists, contact
+       This whole block is shown/hidden as a unit by script.js.
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <div id="view-home">
+
+    <!-- ── HERO / HOME ─────────────────────────────────────────────────── -->
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 class="hero-name">Joshua Williams</h1>
+          <p class="hero-role">Alternative Energy &amp; Power Generation Engineering Student</p>
+          <p class="hero-tagline">
+            I build interdisciplinary engineering systems from concept to working hardware,
+            combining mechanical and electrical design, CAD, embedded systems, robotics,
+            fabrication, and real-world testing.
+          </p>
+          <div class="hero-divider"></div>
+          <ul class="hero-meta">
+            <li>Penn State University</li>
+            <li class="dot" aria-hidden="true">·</li>
+            <li>B.S. Engineering, Alternative Energy &amp; Power Generation</li>
+            <li class="dot" aria-hidden="true">·</li>
+            <li>GPA&nbsp;3.50, Dean's List, Honors</li>
+            <li class="dot" aria-hidden="true">·</li>
+            <li>Seeking full-time roles, Summer 2027</li>
+          </ul>
+          <div class="home-links">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+          </div>
+        </div>
+
+        <div class="hero-photo-frame">
+          <img src="images/profile.jpg" alt="Joshua Williams" loading="lazy" onerror="this.remove(); document.getElementById('heroPhotoPlaceholder').style.display='flex';">
+          <div class="image-placeholder" id="heroPhotoPlaceholder" style="display:none;">Photo coming soon</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ABOUT ───────────────────────────────────────────────────────── -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">Background &amp; Focus</h2>
+
+        <div class="about-grid">
+          <div>
+            <p>
+              I'm an undergraduate engineering student at Penn State University studying
+              Alternative Energy and Power Generation, an interdisciplinary degree that
+              spans mechanical, electrical, and power systems engineering. I hold a 3.50
+              GPA, I'm currently an Engineering Intern at Insteel Wire Products, and I
+              serve as President of the Science and Engineering Club.
+            </p>
+          </div>
+          <div>
+            <p>
+              I'm seeking full-time engineering roles in aerospace, defense, renewable
+              energy, or power systems starting Summer 2027. Long-term, my goal is to
+              work on real hardware for space before eventually starting my own
+              aerospace company.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── INTERNSHIP ──────────────────────────────────────────────────── -->
+    <section class="section" id="internship">
+      <div class="container">
+        <h2 class="section-title">Internship Experience</h2>
+
+        <ul class="single-list">
+          <li class="single-list-item">
+            <a class="simple-link-row" href="#project-insteel-internship">
+              <div>
+                <div class="simple-link-row-title">Insteel Wire Products, Engineering Intern</div>
+                <div class="simple-link-row-desc">Failure analysis and CAD redesign of production components, plus a new additive manufacturing program I proposed and helped build out from the ground up.</div>
+              </div>
+              <span class="text-link" aria-hidden="true">Read more →</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ────────────────────────────────────────────────────── -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section-title">Main Projects</h2>
+        <p class="section-subtitle">Explore engineering projects I've designed, built, tested, and analyzed. Select a project to see the full write-up, engineering process, results, and technical documentation.</p>
+
+        <div class="projects-grid">
+
+          <!-- Card -> Solar Tracker -->
+          <a class="project-card" href="#project-solar-tracker">
+            <span class="project-card-img">
+              <img src="images/solar-tracker-cover.jpg" alt="Presenting the single-axis solar tracker at the research symposium" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'project-card-img image-placeholder',textContent:'Image coming soon'}))">
+            </span>
+            <span class="project-info">
+              <span class="project-title">Single-Axis Solar Tracking System</span>
+              <span class="project-meta">1st Place, Penn State University Honors Research Symposium</span>
+              <span class="project-blurb">A single-axis tracker built to recover lost energy yield on a poorly oriented roof, tested against a fixed panel for a measured 17.5% improvement.</span>
+              <span class="project-link">Read the case study →</span>
+            </span>
+          </a>
+
+          <!-- Card -> Recon-1 -->
+          <a class="project-card" href="#project-recon-1">
+            <span class="project-card-img">
+              <img src="images/recon1-cover.jpg" alt="Recon-1 autonomous rover project" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'project-card-img image-placeholder',textContent:'Image coming soon'}))">
+            </span>
+            <span class="project-info">
+              <span class="project-title">Recon-1: An Autonomous AI-Powered Rover</span>
+              <span class="project-meta">In progress, Hardware Lead</span>
+              <span class="project-blurb">An autonomous AI-powered rover with four-wheel independent drive and steering, a Raspberry Pi and ESP32 control stack, and a mostly 3D-printed structure using multiple materials depending on the part.</span>
+              <span class="project-link">Read the case study →</span>
+            </span>
+          </a>
+
+          <!-- Card -> Bike Generator -->
+          <a class="project-card" href="#project-bike-generator">
+            <span class="project-card-img">
+              <img src="images/bike-generator.jpg" alt="Bike generator project" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'project-card-img image-placeholder',textContent:'Image coming soon'}))">
+            </span>
+            <span class="project-info">
+              <span class="project-title">Bike Generator</span>
+              <span class="project-meta">Science &amp; Engineering Club, Project Lead</span>
+              <span class="project-blurb">A custom-frame, human-powered generator with a regulated 12V output and independently switched LED, fluorescent, and halogen loads, built to demonstrate how electrical demand drives rider effort.</span>
+              <span class="project-link">Read the case study →</span>
+            </span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CLASS WORK ──────────────────────────────────────────────────── -->
+    <section class="section class-projects-section" id="classwork">
+      <div class="container">
+        <h2 class="section-title">Class Projects</h2>
+        <p class="section-subtitle">Coursework from the Alternative Energy and Power Generation program at Penn State University.</p>
+
+        <div class="projects-grid">
+          <a class="project-card" href="#project-class-solar-design">
+            <span class="project-card-img image-placeholder">Image coming soon</span>
+            <span class="project-info">
+              <span class="project-title">Solar Design Project</span>
+              <span class="project-meta">Coursework</span>
+              <span class="project-blurb">A class project sizing a complete residential solar system for an actual house, from energy needs and panel selection to inverter sizing and site orientation.</span>
+              <span class="project-link">Read more →</span>
+            </span>
+          </a>
+
+          <a class="project-card" href="#project-class-rsoc">
+            <span class="project-card-img image-placeholder">Image coming soon</span>
+            <span class="project-info">
+              <span class="project-title">Reversible Solid Oxide Cells (RSOFC)</span>
+              <span class="project-meta">Research Paper</span>
+              <span class="project-blurb">A research project examining reversible solid oxide cells as a power and energy storage solution for a Mars mission, backed by a 10-page paper.</span>
+              <span class="project-link">Read more →</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ─────────────────────────────────────────────────────── -->
+    <section class="section contact" id="contact">
+      <div class="container contact-inner">
+        <h2 class="section-title">Contact</h2>
+        <p class="contact-text">I'm seeking full-time engineering roles in aerospace, defense, renewable energy, or power systems starting Summer 2027.</p>
+        <div class="contact-links">
+          <a href="mailto:joshuaw6714@gmail.com" class="btn btn-primary">joshuaw6714@gmail.com</a>
+          <a href="https://www.linkedin.com/in/joshua-wlliams-288418291/" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
+          <a href="assets/Joshua_Williams_Resume.pdf" target="_blank" rel="noopener" download class="btn btn-secondary">Download Resume</a>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /#view-home -->
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       PROJECT VIEW: Single-Axis Solar Tracking System
+       Opened via any link with href="#project-solar-tracker"
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="view-project view-hidden" id="view-solar-tracker" data-title="Single-Axis Solar Tracking System">
+
+    <section class="project-hero">
+      <div class="container">
+        <a href="#projects" class="project-hero-back">← Back to Portfolio</a>
+        <h1 class="project-hero-title">Single-Axis Solar Tracking System</h1>
+        <p class="project-hero-meta"><strong>Role:</strong> Solo Honors Research Project &nbsp;·&nbsp; <strong>Timeline:</strong> Spring 2025</p>
+
+        <div class="project-award">
+          <div>
+            <div class="project-award-label">Research Award: 1st Place</div>
+            <div class="project-award-title">"South-Facing Solar Tracker Performance on a North-Facing Roof"</div>
+            <div class="project-award-meta">Penn State University Annual Research Symposium · Spring 2025 · First Place, Undergraduate Research Category</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-body">
+      <div class="container project-body-grid">
+        <div>
+          <div class="project-media">
+            <img src="images/solar-tracker.jpg" alt="Presenting the single-axis solar tracker at the research symposium" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'image-placeholder',textContent:'Image coming soon'}))">
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Overview</h3>
+            <p>North-facing rooftop solar panels operate at a fixed, suboptimal angle, losing a significant portion of potential daily energy output. This project designed, built, and tested a single-axis tracking system to dynamically orient a PV panel toward the sun's position throughout the day. The system achieved a measured 17.5% improvement in energy yield over a fixed-angle baseline, validated through direct power output comparison under matched conditions.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">My Role</h3>
+            <p>This was a solo honors research project. I was responsible for all design, fabrication, programming, and testing, from initial concept through the final symposium presentation.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Engineering &amp; Design Work</h3>
+            <p>I designed the tracker in Fusion 360 and 3D printed the custom structural components for the single-axis tracking mechanism, so the panel could follow the sun's path across the sky instead of holding a fixed angle. I wrote the Arduino firmware that uses coordinates and a real-time clock to calculate the sun's position and drive the actuator, adjusting panel angle throughout the day. I then collected and analyzed power output data across multiple test days, comparing the tracker's performance against a fixed panel to produce the results I presented at the symposium.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Engineering Decisions &amp; Tradeoffs</h3>
+            <p>I chose a coordinate and real-time-clock based tracking approach over light-dependent resistor (LDR) sensors. LDR systems are simpler, but they produce noisy output under cloud cover and can't distinguish diffuse light from direct sunlight. The calculation-based approach trades a bit more firmware complexity for smoother, more predictable tracking.</p>
+            <p>3D-printed structural components let me iterate quickly and kept fabrication costs low for this first version. For a future outdoor deployment, I'd want to move the critical joints to machined aluminum for better weather resistance and long-term durability.</p>
+            <p>This project also showed me how tightly mechanical design, embedded control, and power systems are coupled in a real energy application: frame geometry drove the actuator torque requirements, which sized the power supply, which in turn shaped the enclosure design. Presenting the work at the symposium also reinforced how important it is to explain technical work clearly to both engineering and non-engineering audiences.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Results</h3>
+            <div class="project-results">
+              <div class="project-result"><span class="project-result-num">17.5%</span><span class="project-result-desc">Measured energy yield improvement over a fixed north-facing panel, from direct power output comparison across matched test conditions.</span></div>
+              <div class="project-result"><span class="project-result-num">1st</span><span class="project-result-desc">Place at the Penn State University Annual Research Symposium, Spring 2025, undergraduate research category.</span></div>
+              <div class="project-result"><span class="project-result-num">Single-Axis</span><span class="project-result-desc">Tracks the sun's daily arc along one rotational axis instead of holding a fixed panel angle.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="project-sidebar">
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Tools &amp; Software</div>
+            <p class="tool-list">Fusion 360, Arduino / embedded C++, 3D printing, data analysis in Excel</p>
+          </div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Downloads</div>
+            <p><a href="assets/Solar_Research_Poster.pdf" target="_blank" rel="noopener" class="text-link">View Research Poster (PDF) →</a></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </div><!-- /#view-solar-tracker -->
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       PROJECT VIEW: Recon-1 (formerly "Mars Rover")
+       Opened via any link with href="#project-recon-1"
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="view-project view-hidden" id="view-recon-1" data-title="Recon-1: An Autonomous AI-Powered Rover">
+
+    <section class="project-hero">
+      <div class="container">
+        <a href="#projects" class="project-hero-back">← Back to Portfolio</a>
+        <h1 class="project-hero-title">Recon-1: An Autonomous AI-Powered Rover</h1>
+        <p class="project-hero-meta"><strong>Type:</strong> Autonomous AI-Powered Rover &nbsp;·&nbsp; <strong>Role:</strong> Hardware Lead &nbsp;·&nbsp; <strong>Status:</strong> In progress, hardware testing</p>
+      </div>
+    </section>
+
+    <section class="project-body">
+      <div class="container project-body-grid">
+        <div>
+          <div class="project-media">
+            <img src="images/rover.jpg" alt="Recon-1 autonomous rover project" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'image-placeholder',textContent:'Image coming soon'}))">
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Overview</h3>
+            <p>Recon-1 is a four-wheel-drive autonomous ground vehicle designed from the ground up in Fusion 360, including the chassis, independent suspension, and steering knuckles. Most of the rover's structure is 3D printed, using different materials for different parts depending on what each component needs to do mechanically. The rover is currently in hardware testing. The electronics stack pairs a Raspberry Pi 4 with an ESP32, driving encoder-based motors through H-bridge drivers off a 3S LiPo power system.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">My Role</h3>
+            <p>I'm the Hardware Lead on Recon-1, responsible for the mechanical design (chassis, suspension, and steering) and the power and motor control electronics. I'm also building the data logging system that tracks encoder speed, motor response, and power usage during tests. A partner is developing the Python and OpenCV navigation stack that gives the rover its autonomous, AI-driven behavior.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Engineering &amp; Design Work</h3>
+            <ul>
+              <li>Custom chassis, independent suspension, and steering knuckles designed in Fusion 360</li>
+              <li>Four-wheel independent drive and steering</li>
+              <li>Structure built primarily from 3D-printed components, mixing materials by part to balance strength, weight, and flexibility where each is needed</li>
+              <li>Raspberry Pi 4 and ESP32 control architecture</li>
+              <li>Encoder-based motors driven through H-bridge motor controllers</li>
+              <li>3S LiPo power system</li>
+              <li>Data logging for encoder speed, motor response, and power usage during tests</li>
+              <li>Python and OpenCV-based autonomous navigation, developed in collaboration with a project partner</li>
+            </ul>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Documentation</h3>
+            <p>The project is documented with full CAD and a bill of materials on GitHub.</p>
+          </div>
+        </div>
+
+        <aside class="project-sidebar">
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Tools &amp; Software</div>
+            <p class="tool-list">Fusion 360, Raspberry Pi 4, ESP32, Python, OpenCV, embedded C/C++, multi-material 3D printing, H-bridge motor control</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </div><!-- /#view-recon-1 -->
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       PROJECT VIEW: Bike Generator
+       Opened via any link with href="#project-bike-generator"
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="view-project view-hidden" id="view-bike-generator" data-title="Bike Generator">
+
+    <section class="project-hero">
+      <div class="container">
+        <a href="#projects" class="project-hero-back">← Back to Portfolio</a>
+        <h1 class="project-hero-title">Bike Generator</h1>
+        <p class="project-hero-meta"><strong>Role:</strong> Project Lead, Science &amp; Engineering Club</p>
+      </div>
+    </section>
+
+    <section class="project-body">
+      <div class="container project-body-grid">
+        <div>
+          <div class="project-media project-media-row">
+            <span class="frame"><img src="images/bike-generator-1.jpg" alt="Bike generator build" loading="lazy" onerror="this.closest('.frame').replaceWith(Object.assign(document.createElement('div'),{className:'image-placeholder',textContent:'Image coming soon'}))"></span>
+            <span class="frame"><img src="images/bike-generator-2.jpg" alt="Group presenting the bike generator at an open house" loading="lazy" onerror="this.closest('.frame').replaceWith(Object.assign(document.createElement('div'),{className:'image-placeholder',textContent:'Image coming soon'}))"></span>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Overview</h3>
+            <p>The Bike Generator is a bicycle-based power generation and load-testing platform built with the Science and Engineering Club. We started with a bicycle, designed and built a custom frame around it, and turned it into a controlled electrical generation system. The point of the project was never just "pedal a bike, light a bulb." It's a hands-on way to demonstrate energy conversion, and more specifically, to show how increasing electrical demand on a generator translates directly into more mechanical effort from the person pedaling.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">My Role</h3>
+            <p>As President of the Science and Engineering Club, I led the planning, coordination, and execution of the build. I supported component selection, wiring, and testing, and helped guide the student team through assembling the frame and integrating the electrical system. I also presented the project at campus open house events as part of a hands-on STEM demonstration aimed at introducing prospective students to engineering and energy concepts.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Engineering Design</h3>
+            <p>We designed and built a custom frame to hold the bicycle in a stationary position and mount the generator, wiring, and load bank, so the whole system could operate as one platform rather than a bike with parts strapped to it. Getting from "bicycle" to "generation system" meant working through both the mechanical side (how the bike's motion drives the generator) and the electrical side (how that generated power gets conditioned and delivered to a load) as a single integrated design, not two separate projects bolted together.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Power Conversion</h3>
+            <p>Pedaling speed isn't constant, so the raw output of the generator swings around depending on how fast someone is riding. To make that usable, the system runs through a buck-boost converter, which steps the voltage up or down as needed to hold a steady 12V output regardless of whether the rider speeds up, slows down, or the electrical load changes. In practice, that means the lights see a stable supply even though the mechanical input driving the generator is anything but constant.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Electrical Loads</h3>
+            <p>The regulated 12V output powers three sets of lights: 3 LED, 3 fluorescent, and 3 halogen. Each light can be switched on and off independently, which turns the light bank into an adjustable load rather than a fixed one. Switching in more lights, or switching to a less efficient bulb type, increases the electrical demand on the generator in a way we can control and observe in real time.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Human Power &amp; Load Testing</h3>
+            <p>This is the core engineering idea behind the project: electrical demand, generator load, and rider effort are all connected. When we switch on more lights, or swap in a less efficient bulb type, the generator has to supply more electrical power, which increases the mechanical load it puts back on the pedals. The rider feels that directly as harder pedaling. By changing which lights are on, we can walk someone through cause and effect in real time: flip a switch, feel the resistance change, and connect that back to the electrical demand that caused it. It's a simple, physical way to demonstrate a relationship that's usually just an equation on paper.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Generator</h3>
+            <p>Power generation comes from a DC generator driven by the bike's pedaling motion, feeding into the buck-boost converter before reaching the load bank.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Electrical Output</h3>
+            <p>The system delivers a regulated 12V output to the load bank, held steady by the buck-boost converter even as pedaling speed and the active electrical load change.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Testing</h3>
+            <p>We test the system by changing which lights are active, moving between the LED, fluorescent, and halogen banks individually or in combination, and observing how the change in electrical load affects both the output regulation and the effort required to keep pedaling. This lets us demonstrate the demand-to-effort relationship directly to whoever's on the bike, rather than just describing it.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Engineering Challenges</h3>
+            <ul>
+              <li>Integrating the bicycle with a custom-built frame so the whole system holds together as one stable platform</li>
+              <li>Managing a generator output that changes constantly with pedaling speed</li>
+              <li>Keeping the 12V output stable across a wide range of generator speeds and electrical loads</li>
+              <li>Wiring three independently switched load banks (LED, fluorescent, halogen) without interference between them</li>
+              <li>Coordinating the mechanical and electrical halves of the system so they function as one reliable platform for public demonstrations</li>
+            </ul>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">What I Learned</h3>
+            <p>This project made the connection between mechanical and electrical power feel real instead of theoretical. Watching the pedaling effort change the instant a load switches on is a much more direct lesson in energy conversion than anything from a textbook. It also gave me practical experience with power electronics (getting a buck-boost converter to actually hold a stable output under a changing load isn't trivial) and with system integration more broadly: getting the mechanical build, the generator, the power electronics, and the load bank to all work together as one dependable system, especially one that had to hold up to being used by the public at open house events.</p>
+          </div>
+        </div>
+
+        <aside class="project-sidebar">
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Tools &amp; Methods</div>
+            <p class="tool-list">Custom frame fabrication, DC generator, buck-boost converter, regulated 12V output, independently switched electrical loads, load testing, team leadership</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </div><!-- /#view-bike-generator -->
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       PROJECT VIEW: Insteel Wire Products Internship
+       Opened via any link with href="#project-insteel-internship"
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="view-project view-hidden" id="view-insteel-internship" data-title="Insteel Wire Products Internship">
+
+    <section class="project-hero">
+      <div class="container">
+        <a href="#internship" class="project-hero-back">← Back to Portfolio</a>
+        <h1 class="project-hero-title">Production Component Redesign, Additive Manufacturing &amp; Process Improvement</h1>
+        <p class="project-hero-meta"><strong>Employer:</strong> Insteel Wire Products &nbsp;·&nbsp; <strong>Role:</strong> Engineering Intern &nbsp;·&nbsp; <strong>Timeline:</strong> May 2025 – Present</p>
+      </div>
+    </section>
+
+    <section class="project-body">
+      <div class="container project-body-grid">
+        <div>
+          <div class="project-media">
+            <img src="images/insteel.jpg" alt="Working on production machinery at Insteel Wire Products" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'image-placeholder',textContent:'Image coming soon'}))">
+          </div>
+
+          <div class="project-media project-media-row">
+            <span class="frame"><img src="images/insteel-3d-prints.jpg" alt="3D printed components produced during the additive manufacturing program" loading="lazy" onerror="this.closest('.frame').replaceWith(Object.assign(document.createElement('div'),{className:'image-placeholder',textContent:'Image coming soon'}))"></span>
+            <span class="frame"><img src="images/insteel-cad-drawing.jpg" alt="Engineering drawing produced during the Insteel internship" loading="lazy" onerror="this.closest('.frame').replaceWith(Object.assign(document.createElement('div'),{className:'image-placeholder',textContent:'Image coming soon'}))"></span>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Overview</h3>
+            <p>As an Engineering Intern at Insteel Wire Products, I've worked across failure analysis, CAD redesign, and process improvement on production components. Beyond assigned CAD work, I proposed and helped build out the plant's additive manufacturing capability, wrote a new quality control training guide, and completed a plant-wide drainage review. The component redesign work alone reduced costs on select components by up to 97%, generated more than $10,000 in annual savings, and cut part defects by more than 50% through structured FMEA.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Engineering Work</h3>
+            <ul>
+              <li>Produced 100+ 2D technical drawings in AutoCAD</li>
+              <li>Developed 75+ 3D CAD components in Fusion 360</li>
+              <li>Conducted FMEA on manufacturing processes to identify failure modes and implement corrective actions</li>
+              <li>Performed root cause analysis on production failures</li>
+              <li>Revised SOPs and LOTO procedures (OSHA 1910.147) to standardize testing protocols, reduce operator error, and maintain safety compliance</li>
+            </ul>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Additive Manufacturing Program</h3>
+            <p>I proposed and justified what became the plant's additive manufacturing program. When I started, there was no established 3D printing capability on the floor; the program has since grown to three printers in active use. I looked at which parts were good candidates to move from traditional manufacturing to 3D printing, weighing cost, lead time, and part availability against the tradeoffs of the process, and designed components specifically to take advantage of what additive manufacturing does well.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Quality Control Training Guide</h3>
+            <p>Before this, training on the floor relied heavily on whichever experienced employee happened to be teaching at the time, so the information passed down wasn't always consistent. I designed and wrote a quality control training guide to standardize that process, giving employees a single reference for training and day-to-day work instead of relying on informal, person-to-person knowledge transfer.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Plant Drainage Review</h3>
+            <p>I also completed a plant-wide drainage review and proposed improvements to support future renovations and infrastructure planning, looking beyond my immediate CAD assignments to flag issues that could affect longer-term facility upgrades.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Results</h3>
+            <div class="project-results">
+              <div class="project-result"><span class="project-result-num">Up to 97%</span><span class="project-result-desc">Cost reduction on selected redesigned components.</span></div>
+              <div class="project-result"><span class="project-result-num">$10,000+</span><span class="project-result-desc">Generated in annual savings.</span></div>
+              <div class="project-result"><span class="project-result-num">3</span><span class="project-result-desc">3D printers in operation, up from none, through the additive manufacturing program I proposed.</span></div>
+              <div class="project-result"><span class="project-result-num">50%</span><span class="project-result-desc">Reduction in defects, achieved through structured FMEA.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="project-sidebar">
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Tools &amp; Methods</div>
+            <p class="tool-list">Fusion 360, AutoCAD, FMEA, root cause analysis, additive manufacturing, SOP writing, LOTO compliance (OSHA 1910.147), quality control, technical documentation</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </div><!-- /#view-insteel-internship -->
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       PROJECT VIEW: Class Project — Solar Design
+       Opened via any link with href="#project-class-solar-design"
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="view-project view-hidden" id="view-class-solar-design" data-title="Solar Design Project">
+
+    <section class="project-hero">
+      <div class="container">
+        <a href="#classwork" class="project-hero-back">← Back to Portfolio</a>
+        <h1 class="project-hero-title">Solar Design Project</h1>
+        <p class="project-hero-meta"><strong>Course:</strong> Alternative Energy &amp; Power Generation Program, Penn State University</p>
+      </div>
+    </section>
+
+    <section class="project-body">
+      <div class="container project-body-grid">
+        <div>
+          <div class="image-placeholder" style="margin-bottom:40px;">Image coming soon</div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Overview</h3>
+            <p>For this class project, my team and I picked an actual house and worked through the full process of sizing a residential solar system for it, rather than designing something generic on paper. That meant starting from the home's real energy usage and roof conditions and working forward to a complete, justified system, not just picking panels off a spec sheet.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Engineering &amp; Design Work</h3>
+            <ul>
+              <li>Estimated the home's electricity usage to determine how much solar generation the system needed to offset</li>
+              <li>Selected a specific solar panel model based on efficiency, cost, and the physical roof space available</li>
+              <li>Sized and selected an appropriate inverter configuration for the chosen panel array</li>
+              <li>Evaluated the roof's orientation, tilt, and shading to estimate how the site's specific conditions would affect production</li>
+              <li>Calculated expected energy output based on the local solar resource and the selected equipment</li>
+              <li>Compared how the actual placement of the array (orientation and location on the roof) affected performance relative to an idealized south-facing setup</li>
+            </ul>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">What I Took From It</h3>
+            <p>The biggest lesson was that a "textbook" system size rarely survives contact with a real roof. Orientation, shading, and available space all pull the design away from the ideal case, and the job is to work through those constraints methodically instead of ignoring them. It's the same design mindset I use on hardware projects: start from requirements, work through the real-world constraints, and land on a system that actually fits the site instead of one that only works in theory.</p>
+          </div>
+        </div>
+
+        <aside class="project-sidebar">
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Focus Areas</div>
+            <p class="tool-list">Load estimation, panel selection, inverter sizing, site orientation analysis, energy production calculations</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </div><!-- /#view-class-solar-design -->
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       PROJECT VIEW: Class Project — Reversible Solid Oxide Cells (RSOFC)
+       Opened via any link with href="#project-class-rsoc"
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="view-project view-hidden" id="view-class-rsoc" data-title="Reversible Solid Oxide Cells (RSOFC)">
+
+    <section class="project-hero">
+      <div class="container">
+        <a href="#classwork" class="project-hero-back">← Back to Portfolio</a>
+        <h1 class="project-hero-title">Reversible Solid Oxide Cells (RSOFC)</h1>
+        <p class="project-hero-meta"><strong>Type:</strong> Research Paper (10 pages) &nbsp;·&nbsp; <strong>Focus:</strong> Power solution for Mars</p>
+      </div>
+    </section>
+
+    <section class="project-body">
+      <div class="container project-body-grid">
+        <div>
+          <div class="image-placeholder" style="margin-bottom:40px;">Image coming soon</div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Overview</h3>
+            <p>This project examined reversible solid oxide cells (RSOFCs) as a possible power and energy storage solution for a Mars surface mission. Unlike a standard battery, a reversible solid oxide cell can run in two directions: as a fuel cell producing electricity, and in reverse as an electrolyzer producing and storing fuel, which makes it worth a closer look for a location where resupply isn't an option. The 10-page paper covers how the technology works, how it compares to other candidate power systems, and where it could realistically fit into a longer-duration Mars mission architecture.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">My Role</h3>
+            <p>I researched and wrote the paper, working through the electrochemistry behind RSOFC operation, comparing it against other power generation and storage options considered for Mars missions, and building a case for where it could fit into a realistic mission architecture given its advantages and limitations.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">What I Took From It</h3>
+            <p>This was less about a single number and more about tradeoff analysis: energy density, mass, reliability, and in-situ resource use all pull in different directions when you're choosing a power system for a mission with no resupply option. Working through that comparison gave me a much better appreciation for how power system selection shapes the rest of a mission architecture, which is directly relevant to the kind of aerospace hardware work I want to do long-term.</p>
+          </div>
+        </div>
+
+        <aside class="project-sidebar">
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Downloads</div>
+            <p>
+              <a href="assets/RSOFC_Research_Paper.pdf" target="_blank" rel="noopener" class="text-link">Download Research Paper (PDF) →</a><br>
+              <a href="assets/RSOFC_Presentation.pptx" target="_blank" rel="noopener" class="text-link">Download Presentation (PPTX) →</a>
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </div><!-- /#view-class-rsoc -->
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Joshua Williams</span>
+    <span>Alternative Energy &amp; Power Generation Engineering · Penn State University</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
