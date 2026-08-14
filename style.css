@@ -234,11 +234,18 @@ button { font: inherit; cursor: pointer; }
 .single-list { list-style: none; margin-top: 0; }
 .single-list-item { border-top: 1px solid var(--border); }
 .single-list-item:last-child { border-bottom: 1px solid var(--border); }
-.simple-link-row {
-  display: flex; align-items: center; justify-content: space-between; gap: 20px;
-  padding: 22px 4px; cursor: pointer; border-radius: var(--radius);
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+
+
+.simple-link-row { flex-direction: column; align-items: stretch; padding: 0 0 22px; gap: 0; }
+.simple-link-img {
+  display: block; width: 100%; aspect-ratio: 3 / 1; overflow: hidden;
+  border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 18px;
+  background: var(--bg-card); border: 1px solid var(--border); border-bottom: none;
 }
+.simple-link-img img { width: 100%; height: 100%; object-fit: cover; }
+.simple-link-row-content { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 0 4px; }
+
+
 .simple-link-row:hover {
   background: var(--bg-card);
   transform: translateY(-2px);
