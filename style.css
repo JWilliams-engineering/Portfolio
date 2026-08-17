@@ -235,10 +235,11 @@ button { font: inherit; cursor: pointer; }
 .single-list-item { border-top: 1px solid var(--border); }
 .single-list-item:last-child { border-bottom: 1px solid var(--border); }
 
+/* Changed line 242 from aspect-ratio: 3 / 1  to a  2 / 1  */
 
 .simple-link-row { flex-direction: column; align-items: stretch; padding: 0 0 22px; gap: 0; }
 .simple-link-img {
-  display: block; width: 100%; aspect-ratio: 3 / 1; overflow: hidden;
+  display: block; width: 100%; aspect-ratio: 2 / 1; overflow: hidden;
   border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 18px;
   background: var(--bg-card); border: 1px solid var(--border); border-bottom: none;
 }
