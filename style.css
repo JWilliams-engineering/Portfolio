@@ -222,7 +222,7 @@ button { font: inherit; cursor: pointer; }
 }
 .project-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); transform: translateY(-2px); }
 .project-card-img { display: block; width: 100%; aspect-ratio: 16/9; overflow: hidden; border-bottom: 1px solid var(--border); }
-.project-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.project-card-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
 .project-card-img.image-placeholder { border-radius: 0; }
 .project-info { display: block; padding: 22px; }
 .project-title { display: block; font-size: 1.05rem; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
