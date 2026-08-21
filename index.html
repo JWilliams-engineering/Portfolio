@@ -263,7 +263,7 @@
 
           <div class="case-block">
             <h3 class="case-heading">Overview</h3>
-            <p>North-facing rooftop solar panels operate at a fixed, suboptimal angle, losing a significant portion of potential daily energy output. This project designed, built, and tested a single-axis tracking system to dynamically orient a PV panel toward the sun's position throughout the day. The system achieved a measured 17.5% improvement in energy yield over a fixed-angle baseline, validated through direct power output comparison under matched conditions.</p>
+            <p>North-facing rooftop panels lose a lot of their potential output because they're stuck at a fixed, non-optimal angle all day. I built a single-axis tracker to fix that: a 15W monocrystalline panel mounted on a custom, 3D-printed linear actuator that rotates it toward the sun and lays it flat again overnight. Tested against an identical fixed panel over three days, the tracker produced 17.5% more daily energy output.</p>
           </div>
 
           <div class="case-block">
@@ -273,8 +273,14 @@
 
           <div class="case-block">
             <h3 class="case-heading">Engineering &amp; Design Work</h3>
-            <p>I designed the tracker in Fusion 360 and 3D printed the custom structural components for the single-axis tracking mechanism, so the panel could follow the sun's path across the sky instead of holding a fixed angle. I wrote the Arduino firmware that uses coordinates and a real-time clock to calculate the sun's position and drive the actuator, adjusting panel angle throughout the day. I then collected and analyzed power output data across multiple test days, comparing the tracker's performance against a fixed panel to produce the results I presented at the symposium.</p>
+            <p>I designed the tracking mechanism in Fusion 360 and 3D printed a custom linear actuator to drive it, since off-the-shelf actuators for something this small were either too expensive or overkill. The actuator extends to rotate the panel toward solar noon and retracts to lay it flat overnight, and it barely uses any power to do it - about 6W at peak, running only 30–60 seconds a day, for a total draw of under 0.1 Wh per day. I also built in a "snow mode" that shakes the panel using the actuator to shed snow buildup, since a tracker that can't see the sun under snow isn't much use. I wrote the Arduino firmware that uses GPS coordinates and a real-time clock to calculate the sun's position and drive the actuator through its daily cycle.</p>
           </div>
+
+       <div class="case-block">
+  <h3 class="case-heading">Instrumentation &amp; Testing</h3>
+  <p>The test panel was a 15W monocrystalline module — 36 cells, 20.5% rated efficiency. Rather than assume the datasheet number, I characterized its actual maximum power point by sweeping the load across a 0–300Ω rheostat while logging voltage, current, and power in real time with an INA219 sensor, read out through an ESP8266 that hosted a live monitoring webpage. That test found a peak power point of 14.9W at 18.2V into a 22Ω load, close to the panel's rating.</p>
+  <p>For the tracker-vs-fixed comparison, I ran the tracking panel and an identical fixed panel side by side for three days, logging power continuously and integrating each day's power curve into total daily energy output.</p>
+</div>
 
           <div class="case-block">
             <h3 class="case-heading">Engineering Decisions &amp; Tradeoffs</h3>
@@ -288,7 +294,7 @@
             <div class="project-results">
               <div class="project-result"><span class="project-result-num">17.5%</span><span class="project-result-desc">Measured energy yield improvement over a fixed north-facing panel, from direct power output comparison across matched test conditions.</span></div>
               <div class="project-result"><span class="project-result-num">1st</span><span class="project-result-desc">Place at the Penn State University Annual Research Symposium, Spring 2025, undergraduate research category.</span></div>
-              <div class="project-result"><span class="project-result-num">Single-Axis</span><span class="project-result-desc">Tracks the sun's daily arc along one rotational axis instead of holding a fixed panel angle.</span></div>
+           <div class="project-result"><span class="project-result-num">&lt;0.1 Wh</span><span class="project-result-desc">Daily energy used by the actuator itself - a tiny fraction of what the tracking gain adds back.</span></div>
             </div>
           </div>
         </div>
@@ -296,7 +302,7 @@
         <aside class="project-sidebar">
           <div class="sidebar-block">
             <div class="sidebar-heading">Tools &amp; Software</div>
-            <p class="tool-list">Fusion 360, Arduino / embedded C++, 3D printing, data analysis in Excel</p>
+           <p class="tool-list">Fusion 360, Arduino / embedded C++, 3D printing, INA219 power monitoring, ESP8266, data logging &amp; analysis in Excel</p>
           </div>
           <div class="sidebar-block">
             <div class="sidebar-heading">Downloads</div>
@@ -394,72 +400,36 @@
             <span class="frame"><img src="images/bike-generator-2.jpg" alt="Group presenting the bike generator at an open house" loading="lazy" onerror="this.closest('.frame').replaceWith(Object.assign(document.createElement('div'),{className:'image-placeholder',textContent:'Image coming soon'}))"></span>
           </div>
 
-          <div class="case-block">
-            <h3 class="case-heading">Overview</h3>
-            <p>The Bike Generator is a bicycle-based power generation and load-testing platform built with the Science and Engineering Club. We started with a bicycle, designed and built a custom frame around it, and turned it into a controlled electrical generation system. The point of the project was never just "pedal a bike, light a bulb." It's a hands-on way to demonstrate energy conversion, and more specifically, to show how increasing electrical demand on a generator translates directly into more mechanical effort from the person pedaling.</p>
-          </div>
+         <div class="case-block">
+  <h3 class="case-heading">Overview</h3>
+  <p>The Bike Generator is a pedal-powered demonstration platform built with the Science and Engineering Club for campus open house events. A 300W DC generator, driven by the bike, feeds a DC-DC buck-boost converter and then an inverter, powering a bank of switchable lights - 3 LED, 3 halogen, and 3 fluorescent. Visitors pedal and switch lights on and off, feeling in real time how adding more electrical load makes the pedaling harder.</p>
+</div>
 
           <div class="case-block">
-            <h3 class="case-heading">My Role</h3>
-            <p>As President of the Science and Engineering Club, I led the planning, coordination, and execution of the build. I supported component selection, wiring, and testing, and helped guide the student team through assembling the frame and integrating the electrical system. I also presented the project at campus open house events as part of a hands-on STEM demonstration aimed at introducing prospective students to engineering and energy concepts.</p>
-          </div>
+  <h3 class="case-heading">My Role</h3>
+  <p>As President of the Science and Engineering Club, I led the build - component selection, wiring, and testing — and guided the student team through assembling the frame and integrating the electrical system. I've also presented the project at open house events as a hands-on demo for prospective students.</p>
+</div>
+         <div class="case-block">
+  <h3 class="case-heading">System Design</h3>
+  <p>We built a custom frame to hold the bike stationary and mount the generator, electronics, and light bank as one platform instead of a bike with parts strapped on. A 300W DC generator, driven by the pedaling motion, feeds a DC-DC buck-boost converter that holds a steady output regardless of pedaling speed, then an inverter that converts it to AC to run the light bank. The nine lights - 3 LED, 3 halogen, 3 fluorescent - are wired on independent switches, so we can bring on any combination and change the electrical load in real time.</p>
+</div>
+
+         <div class="case-block">
+  <h3 class="case-heading">Testing &amp; Demonstration</h3>
+  <p>At open houses, visitors pedal while we switch lights on and off - comparing the LED, halogen, and fluorescent banks individually or together - so they can feel the pedaling resistance change as electrical demand increases. It's a direct, physical way to show the link between electrical load and mechanical effort instead of just describing it. Getting there took some real engineering problems: keeping the buck-boost converter's output stable across a wide range of pedaling speeds, wiring three independently switched load banks without interference, and building a platform that could hold up to repeated public use.</p>
+</div>
 
           <div class="case-block">
-            <h3 class="case-heading">Engineering Design</h3>
-            <p>We designed and built a custom frame to hold the bicycle in a stationary position and mount the generator, wiring, and load bank, so the whole system could operate as one platform rather than a bike with parts strapped to it. Getting from "bicycle" to "generation system" meant working through both the mechanical side (how the bike's motion drives the generator) and the electrical side (how that generated power gets conditioned and delivered to a load) as a single integrated design, not two separate projects bolted together.</p>
-          </div>
+  <h3 class="case-heading">What I Learned</h3>
+  <p>This project made the connection between mechanical and electrical power feel real instead of theoretical — watching pedaling effort change the instant a load switches on is a better lesson in energy conversion than anything from a textbook. It also gave me hands-on experience with power electronics, particularly getting the buck-boost stage to hold a stable output under a changing load, and with integrating a mechanical build, generator, power electronics, and load bank into one system that had to actually work in front of the public.</p>
+</div>
 
-          <div class="case-block">
-            <h3 class="case-heading">Power Conversion</h3>
-            <p>Pedaling speed isn't constant, so the raw output of the generator swings around depending on how fast someone is riding. To make that usable, the system runs through a buck-boost converter, which steps the voltage up or down as needed to hold a steady 12V output regardless of whether the rider speeds up, slows down, or the electrical load changes. In practice, that means the lights see a stable supply even though the mechanical input driving the generator is anything but constant.</p>
-          </div>
+        
 
-          <div class="case-block">
-            <h3 class="case-heading">Electrical Loads</h3>
-            <p>The regulated 12V output powers three sets of lights: 3 LED, 3 fluorescent, and 3 halogen. Each light can be switched on and off independently, which turns the light bank into an adjustable load rather than a fixed one. Switching in more lights, or switching to a less efficient bulb type, increases the electrical demand on the generator in a way we can control and observe in real time.</p>
-          </div>
-
-          <div class="case-block">
-            <h3 class="case-heading">Human Power &amp; Load Testing</h3>
-            <p>This is the core engineering idea behind the project: electrical demand, generator load, and rider effort are all connected. When we switch on more lights, or swap in a less efficient bulb type, the generator has to supply more electrical power, which increases the mechanical load it puts back on the pedals. The rider feels that directly as harder pedaling. By changing which lights are on, we can walk someone through cause and effect in real time: flip a switch, feel the resistance change, and connect that back to the electrical demand that caused it. It's a simple, physical way to demonstrate a relationship that's usually just an equation on paper.</p>
-          </div>
-
-          <div class="case-block">
-            <h3 class="case-heading">Generator</h3>
-            <p>Power generation comes from a DC generator driven by the bike's pedaling motion, feeding into the buck-boost converter before reaching the load bank.</p>
-          </div>
-
-          <div class="case-block">
-            <h3 class="case-heading">Electrical Output</h3>
-            <p>The system delivers a regulated 12V output to the load bank, held steady by the buck-boost converter even as pedaling speed and the active electrical load change.</p>
-          </div>
-
-          <div class="case-block">
-            <h3 class="case-heading">Testing</h3>
-            <p>We test the system by changing which lights are active, moving between the LED, fluorescent, and halogen banks individually or in combination, and observing how the change in electrical load affects both the output regulation and the effort required to keep pedaling. This lets us demonstrate the demand-to-effort relationship directly to whoever's on the bike, rather than just describing it.</p>
-          </div>
-
-          <div class="case-block">
-            <h3 class="case-heading">Engineering Challenges</h3>
-            <ul>
-              <li>Integrating the bicycle with a custom-built frame so the whole system holds together as one stable platform</li>
-              <li>Managing a generator output that changes constantly with pedaling speed</li>
-              <li>Keeping the 12V output stable across a wide range of generator speeds and electrical loads</li>
-              <li>Wiring three independently switched load banks (LED, fluorescent, halogen) without interference between them</li>
-              <li>Coordinating the mechanical and electrical halves of the system so they function as one reliable platform for public demonstrations</li>
-            </ul>
-          </div>
-
-          <div class="case-block">
-            <h3 class="case-heading">What I Learned</h3>
-            <p>This project made the connection between mechanical and electrical power feel real instead of theoretical. Watching the pedaling effort change the instant a load switches on is a much more direct lesson in energy conversion than anything from a textbook. It also gave me practical experience with power electronics (getting a buck-boost converter to actually hold a stable output under a changing load isn't trivial) and with system integration more broadly: getting the mechanical build, the generator, the power electronics, and the load bank to all work together as one dependable system, especially one that had to hold up to being used by the public at open house events.</p>
-          </div>
-        </div>
-
-        <aside class="project-sidebar">
+             <aside class="project-sidebar">
           <div class="sidebar-block">
             <div class="sidebar-heading">Tools &amp; Methods</div>
-            <p class="tool-list">Custom frame fabrication, DC generator, buck-boost converter, regulated 12V output, independently switched electrical loads, load testing, team leadership</p>
+           <p class="tool-list">Custom frame fabrication, 300W DC generator, DC-DC buck-boost converter, DC-AC inverter, independently switched AC loads, load testing, team leadership</p>
           </div>
         </aside>
       </div>
