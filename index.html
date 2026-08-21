@@ -422,48 +422,47 @@
     </section>
 
     <section class="project-body">
-  <div class="container project-body-grid">
+      <div class="container project-body-grid">
+        <div>
+          <div class="project-media project-media-row">
+            <span class="frame"><img src="images/bike-generator-1.jpg" alt="Bike generator build" loading="lazy" onerror="this.closest('.frame').replaceWith(Object.assign(document.createElement('div'),{className:'image-placeholder',textContent:'Image coming soon'}))"></span>
+            <span class="frame"><img src="images/bike-generator-2.jpg" alt="Group presenting the bike generator at an open house" loading="lazy" onerror="this.closest('.frame').replaceWith(Object.assign(document.createElement('div'),{className:'image-placeholder',textContent:'Image coming soon'}))"></span>
+          </div>
 
-    <div>
-      <div class="project-media project-media-row">
-        <!-- existing two image frames, unchanged -->
+          <div class="case-block">
+            <h3 class="case-heading">Overview</h3>
+            <p>The Bike Generator is a pedal-powered demonstration platform built with the Science and Engineering Club for campus open house events. A 300W DC generator, driven by the bike, feeds a DC-DC buck-boost converter and then an inverter, powering a bank of switchable lights: 3 LED, 3 halogen, and 3 fluorescent. Visitors pedal and switch lights on and off, feeling in real time how adding more electrical load makes the pedaling harder.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">My Role</h3>
+            <p>As President of the Science and Engineering Club, I led the build: component selection, wiring, and testing, and guided the student team through assembling the frame and integrating the electrical system. I've also presented the project at open house events as a hands-on demo for prospective students.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">System Design</h3>
+            <p>We built a custom frame to hold the bike stationary and mount the generator, electronics, and light bank as one platform instead of a bike with parts strapped on. A 300W DC generator, driven by the pedaling motion, feeds a DC-DC buck-boost converter that holds a steady output regardless of pedaling speed, then an inverter that converts it to AC to run the light bank. The nine lights, 3 LED, 3 halogen, 3 fluorescent, are wired on independent switches, so we can bring on any combination and change the electrical load in real time.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Testing &amp; Demonstration</h3>
+            <p>At open houses, visitors pedal while we switch lights on and off, comparing the LED, halogen, and fluorescent banks individually or together, so they can feel the pedaling resistance change as electrical demand increases. It's a direct, physical way to show the link between electrical load and mechanical effort instead of just describing it. Getting there took some real engineering problems: keeping the buck-boost converter's output stable across a wide range of pedaling speeds, wiring three independently switched load banks without interference, and building a platform that could hold up to repeated public use.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">What I Learned</h3>
+            <p>This project made the connection between mechanical and electrical power feel real instead of theoretical: watching pedaling effort change the instant a load switches on is a better lesson in energy conversion than anything from a textbook. It also gave me hands-on experience with power electronics, particularly getting the buck-boost stage to hold a stable output under a changing load, and with integrating a mechanical build, generator, power electronics, and load bank into one system that had to actually work in front of the public.</p>
+          </div>
+        </div>
+
+        <aside class="project-sidebar">
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Tools &amp; Methods</div>
+            <p class="tool-list">Custom frame fabrication, 300W DC generator, DC-DC buck-boost converter, DC-AC inverter, independently switched AC loads, load testing, team leadership</p>
+          </div>
+        </aside>
       </div>
-
-      <div class="case-block">
-        <h3 class="case-heading">Overview</h3>
-        <p>...</p>
-      </div>
-
-      <div class="case-block">
-        <h3 class="case-heading">My Role</h3>
-        <p>...</p>
-      </div>
-
-      <div class="case-block">
-        <h3 class="case-heading">System Design</h3>
-        <p>...</p>
-      </div>
-
-      <div class="case-block">
-        <h3 class="case-heading">Testing &amp; Demonstration</h3>
-        <p>...</p>
-      </div>
-
-      <div class="case-block">
-        <h3 class="case-heading">What I Learned</h3>
-        <p>...</p>
-      </div>
-    </div>
-
-    <aside class="project-sidebar">
-      <div class="sidebar-block">
-        <div class="sidebar-heading">Tools &amp; Methods</div>
-        <p class="tool-list">Custom frame fabrication, 300W DC generator, DC-DC buck-boost converter, DC-AC inverter, independently switched AC loads, load testing, team leadership</p>
-      </div>
-    </aside>
-
-  </div>
-</section>
+    </section>
 
   </div><!-- /#view-bike-generator -->
 
