@@ -254,96 +254,66 @@
       </div>
     </section>
 
-   <section class="project-body">
-  <div class="container project-body-grid">
-
-    <!-- Main content column -->
-    <div>
-      <div class="project-media">
-        <img src="images/solar-tracker.jpg"
-             alt="Presenting the single-axis solar tracker at the research symposium"
-             loading="lazy"
-             onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'image-placeholder',textContent:'Image coming soon'}))">
-      </div>
-
-      <brW monocrystalline panel mounted on a custom, 3D-printed linear actuator that rotates it toward the sun and lays it flat again overnight. Tested against an identical fixed panel over three days, the tracker produced 17.5% more daily energy output.</p>
-      </div>
-
-      <br>
-
-      <div class="case-block">
-        <h3 class="case-heading">My Role</h3>
-        <p>This was a solo honors research project. I was responsible for all design, fabrication, programming, and testing, from initial concept through the final symposium presentation.</p>
-      </div>
-
-      <br>
-
-      <div class="case-block">
-        <h3 class="case-heading">Engineering &amp; Design Work</h3>
-        <p>I designed the tracking mechanism in Fusion 360 and 3D printed a custom linear actuator to drive it, since off-the-shelf actuators for something this small were either too expensive or overkill. The actuator extends to rotate the panel toward solar noon and retracts to lay it flat overnight, and it barely uses any power to do it - about 6W at peak, running only 30-60 seconds a day, for a total draw of under 0.1 Wh per day. I also built in a "snow mode" that shakes the panel using the actuator to shed snow buildup, since a tracker that can't see the sun under snow isn't much use. I wrote the Arduino firmware that uses GPS coordinates and a real-time clock to calculate the sun's position and drive the actuator through its daily cycle.</p>
-      </div>
-
-      <br>
-
-      <div class="case-block">
-        <h3 class="case-heading">Instrumentation &amp; Testing</h3>
-        <p>The test panel was a 15W monocrystalline module - 36 cells, 20.5% rated efficiency. Rather than assume the datasheet number, I characterized its actual maximum power point by sweeping the load across a 0-300Ω rheostat while logging voltage, current, and power in real time with an INA219 sensor, read out through an ESP8266 that hosted a live monitoring webpage. That test found a peak power point of 14.9W at 18.2V into a 22Ω load, close to the panel's rating.</p>
-        <p>For the tracker-vs-fixed comparison, I ran the tracking panel and an identical fixed panel side by side for three days, logging power continuously and integrating each day's power curve into total daily energy output.</p>
-      </div>
-
-      <br>
-
-      <div class="case-block">
-        <h3 class="case-heading">Engineering Decisions &amp; Tradeoffs</h3>
-        <p>I chose a coordinate and real-time-clock based tracking approach over light-dependent resistor (LDR) sensors. LDR systems are simpler, but they produce noisy output under cloud cover and can't distinguish diffuse light from direct sunlight. The calculation-based approach trades a bit more firmware complexity for smoother, more predictable tracking.</p>
-        <p>3D-printed structural components let me iterate quickly and kept fabrication costs low for this first version. For a future outdoor deployment, I'd want to move the critical joints to machined aluminum for better weather resistance and long-term durability.</p>
-        <p>This project also showed me how tightly mechanical design, embedded control, and power systems are coupled in a real energy application: frame geometry drove the actuator torque requirements, which sized the power supply, which in turn shaped the enclosure design. Presenting the work at the symposium also reinforced how important it is to explain technical work clearly to both engineering and non-engineering audiences.</p>
-      </div>
-
-      <br>
-
-      <div class="case-block">
-        <h3 class="case-heading">Results</h3>
-        <div class="project-results">
-          <div class="project-result">
-            <span class="project-result-num">17.5%</span>
-            <span class="project-result-desc">Measured energy yield improvement over a fixed north-facing panel, from direct power output comparison across matched test conditions.</span>
+    <section class="project-body">
+      <div class="container project-body-grid">
+        <div>
+          <div class="project-media">
+            <img src="images/solar-tracker.jpg" alt="Presenting the single-axis solar tracker at the research symposium" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'image-placeholder',textContent:'Image coming soon'}))">
           </div>
 
-          <div class="project-result">
-            <span class="project-result-num">1st</span>
-            <span class="project-result-desc">Place at the Penn State University Annual Research Symposium, Spring 2025, undergraduate research category.</span>
+          <div class="case-block">
+            <h3 class="case-heading">Overview</h3>
+            <p>North-facing rooftop panels lose a lot of their potential output because they're stuck at a fixed, non-optimal angle all day. I built a single-axis tracker to fix that: a 15W monocrystalline panel mounted on a custom, 3D-printed linear actuator that rotates it toward the sun and lays it flat again overnight. Tested against an identical fixed panel over three days, the tracker produced 17.5% more daily energy output.</p>
           </div>
 
-          <div class="project-result">
-            <span class="project-result-num">&lt;0.1 Wh</span>
-            <span class="project-result-desc">Daily energy used by the actuator itself - a tiny fraction of what the tracking gain adds back.</span>
+          <div class="case-block">
+            <h3 class="case-heading">My Role</h3>
+            <p>This was a solo honors research project. I was responsible for all design, fabrication, programming, and testing, from initial concept through the final symposium presentation.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Engineering &amp; Design Work</h3>
+            <p>I designed the tracking mechanism in Fusion 360 and 3D printed a custom linear actuator to drive it, since off-the-shelf actuators for something this small were either too expensive or overkill. The actuator extends to rotate the panel toward solar noon and retracts to lay it flat overnight, and it barely uses any power to do it: about 6W at peak, running only 30–60 seconds a day, for a total draw of under 0.1 Wh per day. I also built in a "snow mode" that shakes the panel using the actuator to shed snow buildup, since a tracker that can't see the sun under snow isn't much use. I wrote the Arduino firmware that uses GPS coordinates and a real-time clock to calculate the sun's position and drive the actuator through its daily cycle.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Instrumentation &amp; Testing</h3>
+            <p>The test panel was a 15W monocrystalline module, 36 cells, 20.5% rated efficiency. Rather than assume the datasheet number, I characterized its actual maximum power point by sweeping the load across a 0–300Ω rheostat while logging voltage, current, and power in real time with an INA219 sensor, read out through an ESP8266 that hosted a live monitoring webpage. That test found a peak power point of 14.9W at 18.2V into a 22Ω load, close to the panel's rating.</p>
+            <p>For the tracker-vs-fixed comparison, I ran the tracking panel and an identical fixed panel side by side for three days, logging power continuously and integrating each day's power curve into total daily energy output.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Engineering Decisions &amp; Tradeoffs</h3>
+            <p>I chose a coordinate and real-time-clock based tracking approach over light-dependent resistor (LDR) sensors. LDR systems are simpler, but they produce noisy output under cloud cover and can't distinguish diffuse light from direct sunlight. The calculation-based approach trades a bit more firmware complexity for smoother, more predictable tracking.</p>
+            <p>3D-printed structural components let me iterate quickly and kept fabrication costs low for this first version. For a future outdoor deployment, I'd want to move the critical joints to machined aluminum for better weather resistance and long-term durability.</p>
+            <p>This project also showed me how tightly mechanical design, embedded control, and power systems are coupled in a real energy application: frame geometry drove the actuator torque requirements, which sized the power supply, which in turn shaped the enclosure design. Presenting the work at the symposium also reinforced how important it is to explain technical work clearly to both engineering and non-engineering audiences.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Results</h3>
+            <div class="project-results">
+              <div class="project-result"><span class="project-result-num">17.5%</span><span class="project-result-desc">Measured energy yield improvement over a fixed north-facing panel, from direct power output comparison across matched test conditions.</span></div>
+              <div class="project-result"><span class="project-result-num">1st</span><span class="project-result-desc">Place at the Penn State University Annual Research Symposium, Spring 2025, undergraduate research category.</span></div>
+              <div class="project-result"><span class="project-result-num">&lt;0.1 Wh</span><span class="project-result-desc">Daily energy used by the actuator itself, a tiny fraction of what the tracking gain adds back.</span></div>
+            </div>
           </div>
         </div>
+
+        <aside class="project-sidebar">
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Tools &amp; Software</div>
+            <p class="tool-list">Fusion 360, Arduino / embedded C++, 3D printing, INA219 power monitoring, ESP8266, data logging &amp; analysis in Excel</p>
+          </div>
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Downloads</div>
+            <p><a href="assets/Solar_Research_Poster.pdf" target="_blank" rel="noopener" class="text-link">View Research Poster (PDF) →</a></p>
+          </div>
+        </aside>
       </div>
-    </div>
+    </section>
 
-    <!-- Sidebar column -->
-    <aside class="project-sidebar">
-      <div class="sidebar-block">
-        <div class="sidebar-heading">Tools &amp; Software</div>
-        <p class="tool-list">Fusion 360, Arduino / embedded C++, 3D printing, INA219 power monitoring, ESP8266, data logging &amp; analysis in Excel</p>
-      </div>
+  </div><!-- /#view-solar-tracker -->
 
-      <div class="sidebar-block">
-        <div class="sidebar-heading">Downloads</div>
-        <p>
-          assets/Solar_Research_Poster.pdf
-            View Research Poster (PDF) →
-          </a>
-        </p>
-      </div>
-    </aside>
-
-  </div><!-- /.container.project-body-grid -->
-</section>
-
-</div><!-- /#view-solar-tracker -->
   <!-- ═══════════════════════════════════════════════════════════════════════
        PROJECT VIEW: Recon-1 (formerly "Mars Rover")
        Opened via any link with href="#project-recon-1"
