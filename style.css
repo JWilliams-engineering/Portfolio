@@ -280,6 +280,9 @@ button { font: inherit; cursor: pointer; }
 
 .project-body { padding-block: 56px; }
 .project-body-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 64px; align-items: start; }
+.project-media { margin-bottom: 40px; }
+.project-media img { width: 100%; border-radius: var(--radius); border: 1px solid var(--border); }
+.project-media-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .project-media-row .frame {
   aspect-ratio: 5 / 7;
 }
