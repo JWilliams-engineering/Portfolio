@@ -280,10 +280,14 @@ button { font: inherit; cursor: pointer; }
 
 .project-body { padding-block: 56px; }
 .project-body-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 64px; align-items: start; }
-.project-media { margin-bottom: 40px; }
-.project-media img { width: 100%; border-radius: var(--radius); border: 1px solid var(--border); }
-.project-media-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
+.project-media-row .frame {
+  aspect-ratio: 5 / 7;
+}
+.project-media-row .frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .project-results { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-top: 8px; }
 .project-result { background: var(--bg); padding: 20px; display: flex; flex-direction: column; gap: 8px; }
 .project-result-num { font-family: var(--mono); font-size: 1.4rem; font-weight: 600; color: var(--text); }
