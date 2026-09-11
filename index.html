@@ -292,7 +292,9 @@
 
           <div class="case-block">
             <h3 class="case-heading">Overview</h3>
-            <p>North-facing rooftop panels lose a lot of their potential output because they're stuck at a fixed, non-optimal angle all day. I built a single-axis tracker to fix that: a 15W monocrystalline panel mounted on a custom, 3D-printed linear actuator that rotates it toward the sun and lays it flat again overnight. Tested against an identical fixed panel over three days, the tracker produced 17.5% more daily energy output.</p>
+            <p>North-facing rooftop panels lose a lot of their potential output because they're stuck at a fixed, non-optimal angle all day. I built a single-axis tracker to fix that:
+              a 15W monocrystalline panel mounted on a custom, 3D-printed linear actuator that rotates it toward the sun and lays it flat again overnight.
+              Tested against an identical fixed panel over three days, the tracker produced 17.5% more daily energy output.</p>
           </div>
 
           <div class="case-block">
@@ -302,20 +304,29 @@
 
           <div class="case-block">
             <h3 class="case-heading">Engineering &amp; Design Work</h3>
-            <p>I designed the tracking mechanism in Fusion 360 and 3D printed a custom linear actuator to drive it, since off-the-shelf actuators for something this small were either too expensive or overkill. The actuator extends to rotate the panel toward solar noon and retracts to lay it flat overnight, and it barely uses any power to do it: about 6W at peak, running only 30–60 seconds a day, for a total draw of under 0.1 Wh per day. I also built in a "snow mode" that shakes the panel using the actuator to shed snow buildup, since a tracker that can't see the sun under snow isn't much use. I wrote the Arduino firmware that uses GPS coordinates and a real-time clock to calculate the sun's position and drive the actuator through its daily cycle.</p>
+            <p>I designed the tracking mechanism in Fusion 360 and 3D printed a custom linear actuator to drive it, since off-the-shelf actuators for something this small were either too expensive or overkill. 
+              The actuator extends to rotate the panel toward solar noon and retracts to lay it flat overnight, and it uses very little power: about 6W at peak, running only 30–60 seconds a day, for a total draw of under 0.1 Wh per day. 
+              I also built in a "snow mode" that shakes the panel using the actuator to shed snow buildup, since a tracker that can't see the sun under snow isn't much use.
+              I wrote the Arduino firmware that uses GPS coordinates and a real-time clock to calculate the sun's position and drive the actuator through its daily cycle.</p>
           </div>
 
           <div class="case-block">
             <h3 class="case-heading">Instrumentation &amp; Testing</h3>
-            <p>The test panel was a 15W monocrystalline module, 36 cells, 20.5% rated efficiency. Rather than assume the datasheet number, I characterized its actual maximum power point by sweeping the load across a 0–300Ω rheostat while logging voltage, current, and power in real time with an INA219 sensor, read out through an ESP8266 that hosted a live monitoring webpage. That test found a peak power point of 14.9W at 18.2V into a 22Ω load, close to the panel's rating.</p>
+            <p>The test panel was a 15W monocrystalline module, 36 cells, 20.5% rated efficiency. Rather than assume the datasheet number, 
+              I characterized its actual maximum power point by sweeping the load across a 0–300ω rheostat while logging voltage, current, and power in real time with an INA219 sensor, read out through an ESP8266 hosting a live monitoring
+              webpage. That test found a peak power point of 14.9W at 18.2V into a 22Ω load, close to the panel's rating.</p>
             <p>For the tracker-vs-fixed comparison, I ran the tracking panel and an identical fixed panel side by side for three days, logging power continuously and integrating each day's power curve into total daily energy output.</p>
           </div>
 
           <div class="case-block">
             <h3 class="case-heading">Engineering Decisions &amp; Tradeoffs</h3>
-            <p>I chose a coordinate and real-time-clock based tracking approach over light-dependent resistor (LDR) sensors. LDR systems are simpler, but they produce noisy output under cloud cover and can't distinguish diffuse light from direct sunlight. The calculation-based approach trades a bit more firmware complexity for smoother, more predictable tracking.</p>
-            <p>3D-printed structural components let me iterate quickly and kept fabrication costs low for this first version. For a future outdoor deployment, I'd want to move the critical joints to machined aluminum for better weather resistance and long-term durability.</p>
-            <p>This project also showed me how tightly mechanical design, embedded control, and power systems are coupled in a real energy application: frame geometry drove the actuator torque requirements, which sized the power supply, which in turn shaped the enclosure design. Presenting the work at the symposium also reinforced how important it is to explain technical work clearly to both engineering and non-engineering audiences.</p>
+            <p>I chose a coordinate- and real-time-clock-based tracking approach over light-dependent resistor (LDR) sensors. LDR systems are simpler, but they produce
+              noisy output under cloud cover and can't distinguish diffuse light from direct sunlight. The calculation-based approach trades a bit more firmware complexity for smoother, more predictable tracking.</p>
+            <p>3D-printed structural components let me iterate quickly and kept fabrication costs low for this first version. For a future outdoor deployment,
+              I'd want to move the critical joints to machined aluminum for better weather resistance and long-term durability.</p>
+            <p>This project also showed me how tightly mechanical design, embedded control, and power systems are coupled in a real energy application:
+              Frame geometry drove the actuator torque requirements, which sized the power supply, which in turn shaped the enclosure design.
+              Presenting the work at the symposium also reinforced how important it is to explain technical work clearly to both engineering and non-engineering audiences.</p>
           </div>
 
           <div class="case-block">
@@ -349,12 +360,11 @@
        Opened via any link with href="#project-recon-1"
        ═══════════════════════════════════════════════════════════════════════ -->
   <div class="view-project view-hidden" id="view-recon-1" data-title="Recon-1: An Autonomous AI-Powered Rover">
-
     <section class="project-hero">
       <div class="container">
         <a href="#projects" class="project-hero-back">← Back to Portfolio</a>
         <h1 class="project-hero-title">Recon-1: An Autonomous AI-Powered Rover</h1>
-        <p class="project-hero-meta"><strong>Type:</strong> Autonomous AI-Powered Rover &nbsp;·&nbsp; <strong>Role:</strong> Hardware Lead &nbsp;·&nbsp; <strong>Status:</strong> In progress, hardware testing</p>
+      <p class="project-hero-meta"><strong>Type:</strong> Autonomous AI-Powered Rover &nbsp;·&nbsp; <strong>Role:</strong> Hardware Lead &nbsp;·&nbsp; <strong>Status:</strong> In progress, testing phase with manual control</p>
       </div>
     </section>
 
@@ -367,12 +377,27 @@
 
           <div class="case-block">
             <h3 class="case-heading">Overview</h3>
-            <p>Recon-1 is a four-wheel-drive autonomous ground vehicle designed from the ground up in Fusion 360, including the chassis, independent suspension, and steering knuckles. Most of the rover's structure is 3D printed, using different materials for different parts depending on what each component needs to do mechanically. The rover is currently in hardware testing. The electronics stack pairs a Raspberry Pi 4 with an ESP32, driving encoder-based motors through H-bridge drivers off a 3S LiPo power system.</p>
+       <p>Recon-1 is a four-wheel-drive ground vehicle I designed from the ground up in Fusion 360, including the chassis, independent suspension, and steering knuckles, built toward eventual autonomous, AI-driven operation.
+         Most of the structure is 3D printed, with materials switched by part depending on what each one needs to handle mechanically.
+         It runs on a Raspberry Pi 4 and ESP32 control stack, driving encoder-based motors through H-bridge drivers off a custom battery pack I built from reclaimed cells.
+         Right now it's in the testing phase under manual control, validating that the mechanical platform, power system, and electronics work together correctly before layering on the autonomous navigation stack.
+         I'm treating it as an ongoing platform rather than a project with a fixed end date.</p>
           </div>
 
           <div class="case-block">
             <h3 class="case-heading">My Role</h3>
-            <p>I'm the Hardware Lead on Recon-1, responsible for the mechanical design (chassis, suspension, and steering) and the power and motor control electronics. I'm also building the data logging system that tracks encoder speed, motor response, and power usage during tests. A partner is developing the Python and OpenCV navigation stack that gives the rover its autonomous, AI-driven behavior.</p>
+            <p>I'm the Hardware Lead on Recon-1: mechanical design (chassis, suspension, steering), power system, and motor control electronics are mine.
+              I also built the battery pack from the ground up, and I'm working on the data logging system that tracks encoder speed, motor response, and power draw during tests.
+              A project partner is building the Python and OpenCV navigation stack that gives the rover its autonomous behavior.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Custom Battery Pack</h3>
+            <p>Instead of buying a pack off the shelf, I built a 4S4P pack out of reclaimed 18650 cells. 
+              Used cells don't all have the same life left, so before anything went into the pack, I tested each one individually to measure its remaining capacity in mAh and sorted out the weak ones.
+              Only cells with enough capacity left, and closely matched to each other, made it into the final pack.
+              Matching cells matters more in a reclaimed pack than a new one: a single weak cell in a parallel group drags down the whole group, and an imbalanced pack charges and discharges unevenly, which shortens its life and can be a safety issue. 
+              Building the pack this way let me get a functional, reasonably capable power source at a fraction of the cost of new cells, while still being deliberate about safety and performance instead of just wiring up whatever was on hand.</p>
           </div>
 
           <div class="case-block">
@@ -383,10 +408,21 @@
               <li>Structure built primarily from 3D-printed components, mixing materials by part to balance strength, weight, and flexibility where each is needed</li>
               <li>Raspberry Pi 4 and ESP32 control architecture</li>
               <li>Encoder-based motors driven through H-bridge motor controllers</li>
-              <li>3S LiPo power system</li>
+              <li>Custom 4S4P battery pack built from reclaimed 18650 cells, individually capacity-tested and matched before assembly</li>
               <li>Data logging for encoder speed, motor response, and power usage during tests</li>
               <li>Python and OpenCV-based autonomous navigation, developed in collaboration with a project partner</li>
             </ul>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Progress &amp; Setbacks</h3>
+         <p>This is still very much a work in progress, and it hasn't been a straight line. Getting four-wheel independent steering to actually behave in hardware took more iteration than I expected. 
+           Early suspension geometry looked fine in CAD but bound up under real load, so I went back and reworked the steering knuckle design to fix it. 
+           Sorting through reclaimed cells for the battery pack was slower than buying new ones would've been, but it was the right tradeoff for cost, and it taught me a lot about cell matching and pack balancing that 
+           I wouldn't have learned otherwise. Right now I'm running the rover under manual control to test drive, steering, and power performance before handing control over to the autonomous stack,
+           since I'd rather find mechanical or electrical issues while I can still drive it myself than debug them at the same time as the navigation code.
+           The main open work is finishing the data logging system and integrating the navigation stack my partner is building once manual testing checks out. I'd rather document the rough 
+           patches honestly than pretend this went smoothly, since the troubleshooting is a real part of the engineering.</p>
           </div>
 
           <div class="case-block">
@@ -398,11 +434,17 @@
         <aside class="project-sidebar">
           <div class="sidebar-block">
             <div class="sidebar-heading">Tools &amp; Software</div>
-            <p class="tool-list">Fusion 360, Raspberry Pi 4, ESP32, Python, OpenCV, embedded C/C++, multi-material 3D printing, H-bridge motor control</p>
+            <p class="tool-list">Fusion 360, Raspberry Pi 4, ESP32, Python, OpenCV, embedded C/C++, multi-material 3D printing, H-bridge motor control, battery pack building &amp; cell testing</p>
           </div>
         </aside>
       </div>
     </section>
+
+  </div><!-- /#view-recon-1 -->
+
+
+
+    
 
   </div><!-- /#view-recon-1 -->
 
