@@ -176,6 +176,19 @@
               <span class="project-link">View Project →</span>
             </span>
           </a>
+          <!-- Card -> Far Field DOA Detector -->
+          <a class="project-card" href="#project-mic-doa">
+            <span class="project-card-img">
+              <img src="images/mic-doa-cover.jpg" alt="Far field sound direction-of-arrival detector" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'project-card-img image-placeholder',textContent:'Image coming soon'}))">
+            </span>
+            <span class="project-info">
+              <span class="project-title">Far Field DOA Detector</span>
+              <span class="project-meta">Team Project, Mechanical &amp; Electrical Lead</span>
+              <span class="project-blurb">A three-microphone array on a Teensy 4.0 that listens for a sound and calculates which direction it came from, accurate to within about a degree at 10 feet.</span>
+              <span class="project-link">View Project →</span>
+            </span>
+          </a>
+             
 
           <!-- Card -> PCB Workshop -->
           <a class="project-card" href="#project-pcb-workshop">
@@ -451,7 +464,74 @@
 
   </div><!-- /#view-bike-generator -->
 
+    <!-- ═══════════════════════════════════════════════════════════════════════
+       PROJECT VIEW: Far Field DOA Detector
+       Opened via any link with href="#project-mic-doa"
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="view-project view-hidden" id="view-mic-doa" data-title="Far Field DOA Detector">
 
+    <section class="project-hero">
+      <div class="container">
+        <a href="#projects" class="project-hero-back">← Back to Portfolio</a>
+        <h1 class="project-hero-title">Far Field DOA Detector</h1>
+        <p class="project-hero-meta"><strong>Role:</strong> Mechanical &amp; Electrical Build, Testing &amp; Troubleshooting &nbsp;·&nbsp; <strong>Platform:</strong> Teensy 4.0</p>
+      </div>
+    </section>
+
+    <section class="project-body">
+      <div class="container project-body-grid">
+        <div>
+          <div class="project-media">
+            <img src="images/mic-doa.jpg" alt="Far field direction-of-arrival microphone array" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'image-placeholder',textContent:'Image coming soon'}))">
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Overview</h3>
+            <p>This project is a three-microphone array that listens for a sound and figures out which direction it came from. My project partner and I built a Teensy 4.0 based sensor that times how a sound wave arrives at three microphones arranged in a triangle, then works backward from those tiny timing differences to calculate a bearing angle to the source. In testing, the detector was accurate to within about a degree at 10 feet.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">My Role</h3>
+            <p>I handled the mechanical build and wiring: mounting the three microphones in a fixed triangle, running the analog lines back to the Teensy, and making sure all three channels shared a common ground and were biased consistently so that timing differences reflected the actual sound and not electrical noise between channels. My partner wrote the firmware and the signal processing behind the direction calculation. We worked together on the physics behind the bearing calculation and spent a lot of time testing and troubleshooting the system as a pair.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">How It Works</h3>
+            <p>The detector works in four steps: it listens for a sound, times how much later each microphone hears it, turns that timing gap into a distance, then turns that distance into a direction.</p>
+            <p><strong>Peak-hold envelope.</strong> Instead of reacting to the raw, jumpy microphone signal, the code tracks how loud each channel is right now using a peak-hold envelope. It works like a VU meter needle that jumps up instantly when something loud happens, then slowly drifts back down instead of snapping to zero. That gives a clean trigger signal instead of a noisy one.</p>
+            <p><strong>Cross-correlation.</strong> Once a sound is detected, each microphone's short recording is compared against the others. The code slides one clip back and forth in time against another until it finds the offset where they line up best. That offset tells you which mic heard the sound first, and by how much.</p>
+            <p><strong>Physically possible lag range.</strong> Sound only travels so fast, and the mics are only so far apart, so there is a hard limit on how big that timing gap can be between any two microphones. The code only searches within that physically possible range, which keeps it from accidentally matching two unrelated parts of the waveform and reporting a delay that could not actually happen.</p>
+            <p><strong>Lag to distance to direction.</strong> Once the timing gap between two mics is known, multiplying by the speed of sound converts it into an actual distance difference. Because the sound source is assumed to be far enough away that the wave is essentially flat by the time it reaches the array, similar to ripples from a distant boat looking like straight lines up close, those distance differences convert directly into a bearing angle without needing an iterative solve.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Mechanical &amp; Electrical Design</h3>
+            <p>The three microphones are arranged in an equilateral triangle with 16.25 cm of spacing between them, which sets the geometry the direction calculation depends on. All three share a common ground and are biased to sit near the middle of the ADC's input range so the signal can swing above and below that bias without clipping. Getting that biasing and grounding consistent across all three channels mattered a lot, since any mismatch between channels shows up directly as error in the timing comparison and throws off the bearing result.</p>
+          </div>
+
+          <div class="case-block">
+            <h3 class="case-heading">Specifications</h3>
+            <div class="project-results">
+              <div class="project-result"><span class="project-result-num">~1°</span><span class="project-result-desc">Measured bearing accuracy at a 10-foot test distance.</span></div>
+              <div class="project-result"><span class="project-result-num">40 kHz</span><span class="project-result-desc">Per-channel sample rate (25 microsecond scan interval).</span></div>
+              <div class="project-result"><span class="project-result-num">16.25 cm</span><span class="project-result-desc">Microphone spacing across the equilateral triangle array.</span></div>
+              <div class="project-result"><span class="project-result-num">0°–360°</span><span class="project-result-desc">Bearing output, referenced to the array's forward axis.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="project-sidebar">
+          <div class="sidebar-block">
+            <div class="sidebar-heading">Tools &amp; Methods</div>
+            <p class="tool-list">Teensy 4.0, analog microphones, cross-correlation, signal processing, circuit wiring, calibration, system testing</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </div><!-- /#view-mic-doa -->
+
+  
   <!-- ═══════════════════════════════════════════════════════════════════════
        PROJECT VIEW: Insteel Wire Products Internship
        Opened via any link with href="#project-insteel-internship"
