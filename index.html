@@ -40,7 +40,7 @@
 <main id="main">
 
   <!-- ═══════════════════════════════════════════════════════════════════════
-       HOME VIEW — hero, about, internship, project lists, contact
+       HOME VIEW — hero, about, internship,  lists, contact
        This whole block is shown/hidden as a unit by script.js.
        ═══════════════════════════════════════════════════════════════════════ -->
   <div id="view-home">
@@ -67,7 +67,7 @@
             <li>Seeking full-time roles, Summer 2027</li>
           </ul>
           <div class="home-links">
-            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#s" class="btn btn-primary">View s</a>
             <a href="#contact" class="btn btn-secondary">Get in Touch</a>
           </div>
         </div>
@@ -113,7 +113,7 @@
 
      <ul class="single-list">
           <li class="single-list-item">
-            <a class="simple-link-row" href="#project-insteel-internship">
+            <a class="simple-link-row" href="#-insteel-internship">
               <span class="simple-link-img">
                 <img src="images/insteel-cover.jpg" alt="Insteel Wire Products internship" loading="lazy" onerror="this.closest('.simple-link-img').replaceWith(Object.assign(document.createElement('div'),{className:'simple-link-img image-placeholder',textContent:'Image coming soon'}))">
               </span>
@@ -287,13 +287,13 @@
       <div class="container project-body-grid">
         <div>
           <div class="project-media">
-            <img src="images/solar-tracker.jpg" alt="Presenting the single-axis solar tracker at the research symposium" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'image-placeholder',textContent:'Image coming soon'}))">
+            <img src="images/solar-tracker.jpg" alt=" Presenting the single-axis solar tracker at the research symposium" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'image-placeholder',textContent:'Image coming soon'}))">
           </div>
 
           <div class="case-block">
             <h3 class="case-heading">Overview</h3>
             <p>North-facing rooftop panels lose a lot of their potential output because they're stuck at a fixed, non-optimal angle all day. I built a single-axis tracker to fix that:
-              a 15W monocrystalline panel mounted on a custom, 3D-printed linear actuator that rotates it toward the sun and lays it flat again overnight.
+              A 15W monocrystalline panel mounted on a custom, 3D-printed linear actuator that rotates it toward the sun and lays it flat again overnight.
               Tested against an identical fixed panel over three days, the tracker produced 17.5% more daily energy output.</p>
           </div>
 
@@ -371,12 +371,18 @@
     <section class="project-body">
       <div class="container project-body-grid">
         <div>
-          <div class="project-media">
-            <img src="images/rover.jpg" alt="Recon-1 autonomous rover project" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'image-placeholder',textContent:'Image coming soon'}))">
-          </div>
+         <div class="project-media">
+  <img src="images/rover.jpg" alt="Recon-1 autonomous rover project" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'image-placeholder',textContent:'Image coming soon'}))">
+</div>
 
-          <div class="case-block">
-            <h3 class="case-heading">Overview</h3>
+<div class="project-media">
+  <img src="images/recon1-battery-testing.jpg" alt="Testing reclaimed 18650 cells for the Recon-1 battery pack" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'image-placeholder',textContent:'Image coming soon'}))">
+</div>
+
+<div class="case-block">
+  <h3 class="case-heading">Overview</h3>
+
+  
        <p>Recon-1 is a four-wheel-drive ground vehicle I designed from the ground up in Fusion 360, including the chassis, independent suspension, and steering knuckles, built toward eventual autonomous, AI-driven operation.
          Most of the structure is 3D printed, with materials switched by part depending on what each one needs to handle mechanically.
          It runs on a Raspberry Pi 4 and ESP32 control stack, driving encoder-based motors through H-bridge drivers off a custom battery pack I built from reclaimed cells.
